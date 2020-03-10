@@ -20,9 +20,9 @@ namespace BookListRazor
         [BindProperty]
         public Book Book { get; set; }
 
-        public async Task OnGet()
+        public async Task OnGet(int id)
         {
-            Book = await _db.Book.FindAsync(Book);
+            Book = await _db.Book.FindAsync(id);
         }
 
         public async Task<IActionResult> OnPost()
